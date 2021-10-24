@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.example.React.domain.repository.TaskListRepository">
+	
+	
+	<resultMap id="taskListFindAll"
+		type="com.example.React.entity.task.TaskList">
+		<id property="listId" column="list_id" />
+		<result property="listTitle" column="title" />
+		<result property="userId" column="user_id" />
+	</resultMap>
+	
+	<select id="taskListFindAll" resultMap="taskListFindAll">
+		select* from taskLists;
+	</select>
+	
+	
+	<resultMap id="insertTaskList"
+		type="com.example.React.entity.task.TaskList">
+		<id property="listId" column="list_id" />
+		<result property="listTitle" column="title" />
+		<result property="userId" column="user_id" />
+	</resultMap>
+	
+	<select id="insertTaskList" resultMap="insertTaskList">
+		insert into taskLists (title,user_id) values (#{listTitle},#{userId});
+	</select>
+	
+	
+	<resultMap id="deleteTaskList"
+		type="com.example.React.entity.task.TaskList">
+		<id property="listId" column="list_id" />
+		<result property="listTitle" column="title" />
+		<result property="userId" column="user_id" />
+	</resultMap>
+	
+	<select id="deleteTaskList" resultMap="deleteTaskList">
+		delete from taskLists where list_id = #{listId};
+	</select>
+
+</mapper>

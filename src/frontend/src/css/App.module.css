@@ -1,0 +1,21 @@
+.app__icon {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin-top: 30px;
+  color: dimgray;
+}
+.reducerDivCommon {
+  height: 300px;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.reducerTableCommon {
+  height: 400px;
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}

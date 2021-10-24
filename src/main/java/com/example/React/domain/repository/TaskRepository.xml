@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.example.React.domain.repository.TaskRepository">
+	
+	
+	<resultMap id="taskFind"
+		type="com.example.React.entity.task.TaskItem">
+		<id property="taskId" column="task_id" />
+		<result property="listId" column="list_id" />
+		<result property="taskTitle" column="title" />
+		<result property="taskBody" column="body" />
+		<result property="deadline" column="deadline" />
+		<result property="createDate" column="createdate" />
+		<result property="complete" column="complete" />
+		<result property="favorite" column="favorite" />
+	</resultMap>
+	
+	<select id="taskFind" resultMap="taskFind">
+		select
+		task_id,
+		list_id,
+		title,
+		body,
+		deadline,
+		createdate,
+		complete,
+		favorite
+		from tasks
+		where list_id = #{taskid}
+		;
+	</select>
+	
+
+</mapper>
